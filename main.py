@@ -164,7 +164,7 @@ women_bags9=Bags("Shoulder Bag 3","One of our comfortable shoulder bag models","
 #---Mysql Connection Start
 db = pymysql.connect(host='localhost',
                      user='root',
-                     password='mysqlŞifren', # Kendi mysql şifreni yazmalısın '' içinde
+                     password='feyzullah0348', 
                      db='dbshoppingordersystem',
                      cursorclass=pymysql.cursors.DictCursor)
 connection = db.cursor()
@@ -214,23 +214,41 @@ def homePage():
     scrollbar.config(command=canvas.yview)
     canvas.bind_all("<MouseWheel>", scroll_window)
 
+
+
+#--Logo
+    imagea = Image.open("./images/Logo2.png")
+    imagea = imagea.resize((100,66),Image.ANTIALIAS)
+    imagea = ImageTk.PhotoImage(imagea)
+    label1 = Label(home_screen, image=imagea)
+    label1.place(x =20,y = 3)
+    
+#Top Bar
+    label = Label(home_screen,background='white',width=250,height=4)
+    label.place(x =120,y = 5)
+    
+    Button(home_screen, text="Home Page",activebackground="lightgray", borderwidth=0,font="verdana 11 bold",bg="white").place(x = 650, y = 25)
+    Button(home_screen, text="About",activebackground="lightgray", borderwidth=0,font="verdana 11 bold",bg="white").place(x =850, y = 25)
+    Button(home_screen, text="Contact",activebackground="lightgray", borderwidth=0,font="verdana 11 bold",bg="white").place(x = 1000, y = 25)
+    Button(home_screen, text="Addresses",activebackground="lightgray", borderwidth=0,font="verdana 11 bold",bg="white").place(x = 1150, y = 25)
+
 #----Categories
-    Label(home_screen,text="__________________________",font="verdana 11 bold").place(x=20,y=70)
-    Label(home_screen,text="Kategoriler",font="verdana 11 bold").place(x=20,y=60)
+    Label(home_screen,text="__________________________",font="verdana 11 bold").place(x=20,y=100)
+    Label(home_screen,text="Kategoriler",font="verdana 11 bold").place(x=20,y=90)
 
 #Commandı Eklenmeyen Kategori buttonları.
-    Label(home_screen,text="Men 🡶",font="verdana 11 bold").place(x=40,y=100)
-    Button(home_screen, text="Giyim",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 130)
-    Button(home_screen, text="Ayakkabı",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 160)
-    Button(home_screen, text="Saat",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 190)
-    Button(home_screen, text="Çanta",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 220)
-    Label(home_screen,text="Women 🡶",font="verdana 11 bold").place(x=40,y=310)
-    Button(home_screen, text="Giyim",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 340)
-    Button(home_screen, text="Ayakkabı",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 370)
-    Button(home_screen, text="Saat",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 400)
-    Button(home_screen, text="Çanta",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 430)
-    Button(home_screen, text="Login",activebackground="lightgray",bg='#008CBA',command=go_login, borderwidth=0,font="verdana 12 bold").place(x = 1680, y = 45)
-    Button(home_screen, text="Register",activebackground="lightgray",bg='#008CBA',command=go_register ,borderwidth=0,font="verdana 12 bold").place(x = 1760, y = 45)
+    Label(home_screen,text="Men 🡶",font="verdana 11 bold").place(x=40,y=130)
+    Button(home_screen, text="Giyim",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 160)
+    Button(home_screen, text="Ayakkabı",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 190)
+    Button(home_screen, text="Saat",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 220)
+    Button(home_screen, text="Çanta",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 250)
+    Label(home_screen,text="Women 🡶",font="verdana 11 bold").place(x=40,y=340)
+    Button(home_screen, text="Giyim",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 370)
+    Button(home_screen, text="Ayakkabı",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 400)
+    Button(home_screen, text="Saat",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 430)
+    Button(home_screen, text="Çanta",activebackground="lightgray", borderwidth=0,font="verdana 11 bold").place(x = 70, y = 460)
+    Button(home_screen, text="Login",activebackground="lightgray",bg='#008CBA',command=go_login, borderwidth=0,font="verdana 12 bold").place(x = 1680, y = 25)
+    Button(home_screen, text="Register",activebackground="lightgray",bg='#008CBA',command=go_register ,borderwidth=0,font="verdana 12 bold").place(x = 1760, y = 25)
 
 #----------------------------------------------------------------------------------------------------------------
     image1 = Image.open("./images/men_shoes_photo1.jpeg")
@@ -278,40 +296,40 @@ def homePage():
     
 #---resim ve açıklama için Label widget'ı oluşturun
     label1 = Label(home_screen, image=image1, text=text1, compound="top")
-    label1.place(x = 400,y = 90)
+    label1.place(x = 400,y = 110)
 
     label2 = Label(home_screen, image=image2, text=text2, compound="top")
-    label2.place(x = 690,y = 90)
+    label2.place(x = 690,y = 110)
 
     label3 = Label(home_screen, image=image3, text=text3, compound="top")
-    label3.place(x = 980,y = 90)
+    label3.place(x = 980,y = 110)
 
     label4 = Label(home_screen, image=image4, text=text4, compound="top")
-    label4.place(x = 1270,y = 90)
+    label4.place(x = 1270,y = 110)
 #--
     label5 = Label(home_screen, image=image5, text=text5, compound="top")
-    label5.place(x = 400,y = 420)
+    label5.place(x = 400,y = 380)
 
     label6 = Label(home_screen, image=image6, text=text6, compound="top")
-    label6.place(x = 690,y = 420)
+    label6.place(x = 690,y = 380)
 
     label7 = Label(home_screen, image=image7, text=text7, compound="top")
-    label7.place(x = 980,y = 420)
+    label7.place(x = 980,y = 380)
 
     label8 = Label(home_screen, image=image8, text=text8, compound="top")
-    label8.place(x = 1270,y = 420)
+    label8.place(x = 1270,y = 380)
 #--
     label9 = Label(home_screen, image=image9, text=text9, compound="top")
-    label9.place(x = 400,y = 750)
+    label9.place(x = 400,y = 670)
 
     label10 = Label(home_screen, image=image10, text=text10, compound="top")
-    label10.place(x = 690,y = 750)
+    label10.place(x = 690,y = 670)
 
     label11 = Label(home_screen, image=image11, text=text11, compound="top")
-    label11.place(x = 980,y = 750)
+    label11.place(x = 980,y = 670)
 
     label12 = Label(home_screen, image=image12, text=text12, compound="top")
-    label12.place(x = 1270,y = 750)
+    label12.place(x = 1270,y = 670)
 
     home_screen.mainloop()
 #---Home Page End
@@ -333,6 +351,13 @@ def loginverifyandhomepage():
     canvas.pack(side=LEFT, fill=BOTH, expand=True)
     scrollbar.config(command=canvas.yview)
     canvas.bind_all("<MouseWheel>", scroll_window)
+
+# #--Logo
+#     image1 = Image.open("./images/Logo.png")
+#     image1 = ImageTk.PhotoImage(image1)
+
+#     label1 = Label(home_screen_real, image=image1,compound="top",width=250,height=250)
+#     label1.place(x =20,y = 20)
 
 #---- Categories
     Label(home_screen_real,text="__________________________",font="verdana 11 bold").place(x=20,y=70)
